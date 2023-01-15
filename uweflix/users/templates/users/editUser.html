@@ -1,0 +1,23 @@
+{% extends "users/layout.html" %}
+{% load static %}
+
+{% block title %}
+Edit User
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/editUser.css' %}"/>
+<body>
+    <a class="btn btn-dark" style="margin-bottom: 20px; margin-left: 10px;" href="{% url 'retrieve users' %}">🠔 Go Back</a>
+    <h3>Edit User <span style="color: brown;">{{ user.username }}</span></h3>
+    <div  style="margin-left: 15px">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{userForm}}
+        <br>
+        <input type="submit" name="Update" class="btn btn-primary" style="margin-top: 10px;" >
+    </form></div>
+</body>
+
+
+
+{% endblock %}

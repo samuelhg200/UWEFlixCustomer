@@ -1,0 +1,15 @@
+{% extends "users/layout.html" %}
+{% block title %}
+    Registration
+{% endblock %}
+{% block content %}
+<div style="margin-left: 15px;">
+    <h3>Register User</h3>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{userForm}}
+        <br>
+        <input type="submit" name="Register" class="btn btn-primary" style="margin-top: 10px;" >
+    </form>
+</div>
+{% endblock %}

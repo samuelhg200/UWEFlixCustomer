@@ -1,0 +1,30 @@
+{% extends "users/layout.html" %}
+{% block title %}
+    User List
+{% endblock %}
+{% block content %}
+
+<body>
+   <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Username</th>
+        </tr>
+      </thead>
+      <tbody>
+         {% for user in users %}
+         <tr> 
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ user.username }}</td>
+           <td style="width: 200px">
+            <a class="btn btn-dark" style="width: 80px" href={% url 'edit_users' username=user.username %}>Edit</a>
+            <a class="btn btn-dark" style="width: 80px" href={% url 'delete_users' username=user.username %}>Delete</a>
+            </td>
+          </tr>
+         {% endfor %}
+        
+      </tbody>
+    </table>
+</body>
+{% endblock %}

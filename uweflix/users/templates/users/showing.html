@@ -1,0 +1,14 @@
+{% extends "users/layout.html" %}
+{% block title %}
+    Showing Details
+{% endblock %}
+{% block content %}
+<div style="margin-left: 15px;">
+    <h3 style="font-size: 16px;">Showing Details - Functional Requirement 3</h3>
+    <h3><span style="color: blue">{{showing.title}}</span></h3>
+    <h5>Age Rating: <span style="color: red">{{showing.age_rating}}+</span></h5>
+    <h5>Duration: <span style="color: red">{{showing.duration}}</span></h4>
+    <h5><span style="color: red">{{showing.description}}</span></h5>
+    
+</div>
+{% endblock %}
